@@ -2,19 +2,24 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-function readJsonFile(filePath: string): any[] {
+interface MyObject {
+  caption: string;
+  // Other properties of your object
+}
+
+function readJsonFile(filePath: string): MyObject[] {
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   return jsonData.split('\n').map((line) => {
     try {
-      return JSON.parse(line);
+      return JSON.parse(line) as MyObject;
     } catch (error) {
       console.log(error);
       return null;
     }
-  }).filter((obj) => obj !== null);
+  }).filter((obj) => obj !== null) as MyObject[];
 }
 
-function findObjectByCaption(array: any[], caption: string): any | null {
+function findObjectByCaption(array: MyObject[], caption: string): MyObject | null {
   const lowercaseCaption = caption.toLowerCase();
   for (const obj of array) {
     if (typeof obj.caption === 'string' && obj.caption.toLowerCase() === lowercaseCaption) {

@@ -1,28 +1,16 @@
-# Create T3 App
+# MY-T3-APP
+This project is about create a full stack web develop, using `create-t3-app` with Prisma, NexAuth and Tailwind.
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Usage
+1. First Need to create a .env file (use example.env) and put the value of the variable
+2. Dowload the data (.json) used for this proyect, use this link: [entities.ftm.json](https://data.opensanctions.org/datasets/20230604/peps/entities.ftm.json) or go the [oficialPage](https://www.opensanctions.org/datasets/peps/) and dowload the entities.ftm.json.
+This file should be placed in src/data/
+3. Create a Docker enviroment: <br>
+first need to build the container
+```bash
+docker-compose build
+```
+Then need to run the container
+```bash
+docker-compose up
+```

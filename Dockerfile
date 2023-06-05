@@ -44,6 +44,7 @@ COPY . .
 
 # Generate Prisma client
 RUN npx prisma generate
+RUN npx prisma db push
 
 # Expose the port for Next.js development server
 EXPOSE 3000
